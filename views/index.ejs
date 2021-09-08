@@ -1,0 +1,36 @@
+<%- include('partials/header') %>
+<%- include('partials/homenavbar') %>
+
+<body>
+  <div class="container mt-3">
+    <div class="container mb-4 p-3" style="background-color: gainsboro;">
+      <h1 class="display-4">Bem vindo!</h1>
+      <p class="lead">Este é um simples blog dedicado à comunidade de programadores do Brasil.</p>
+      <hr class="my-4">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+        ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+        nulla pariatur.</p>
+      <button class="btn btn-primary">Saiba mais</button>
+    </div>
+    <% articles.forEach((article)=> {%>
+      <div class="card mb-3">
+        <div class="card-header">
+          <h2>
+            <%= article.name %>
+          </h2>
+        </div>
+        <div class="card-body">
+          <a class="btn btn-success" href="/<%=  article.slug %>">Ler artigo</a>
+        </div>
+      </div>
+    <% }) %>
+    <div class="row mt-3 mb-3 float-end">
+      <div class="col col-12">
+        <a href="/articles/page/2" class="btn btn-outline-secondary">Next >>> </a>
+      </div>
+    </div>
+  </div>
+</body>
+
+<%- include('partials/footer') %>
